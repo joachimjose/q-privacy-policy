@@ -34,7 +34,6 @@
       font-weight: 300;
     }
 
-    /* ── Noise texture overlay ── */
     body::before {
       content: '';
       position: fixed;
@@ -45,7 +44,6 @@
       opacity: 0.5;
     }
 
-    /* ── Ambient glow ── */
     body::after {
       content: '';
       position: fixed;
@@ -59,7 +57,6 @@
       z-index: 0;
     }
 
-    /* ── Layout ── */
     .wrapper {
       position: relative;
       z-index: 1;
@@ -68,7 +65,6 @@
       padding: 0 24px 80px;
     }
 
-    /* ── Sticky nav ── */
     nav {
       position: sticky;
       top: 0;
@@ -123,7 +119,6 @@
       background: rgba(245,158,11,0.06);
     }
 
-    /* ── Hero ── */
     .hero {
       padding: 72px 0 56px;
       border-bottom: 1px solid var(--border);
@@ -174,7 +169,6 @@
       margin-right: 20px;
     }
 
-    /* ── Sections ── */
     .section {
       margin-bottom: 80px;
       scroll-margin-top: 80px;
@@ -213,7 +207,6 @@
       color: var(--muted);
     }
 
-    /* ── Articles ── */
     .article {
       margin-bottom: 36px;
       padding: 28px;
@@ -268,7 +261,6 @@
       font-size: 12px;
     }
 
-    /* ── Subscription summary box ── */
     .sub-summary {
       background: rgba(245,158,11,0.05);
       border: 1px solid rgba(245,158,11,0.2);
@@ -315,7 +307,22 @@
       color: var(--text);
     }
 
-    /* ── Contact card ── */
+    .trial-banner {
+      background: rgba(245,158,11,0.07);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-left: 3px solid var(--amber);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .trial-banner strong {
+      color: var(--amber);
+    }
+
     .contact-card {
       background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.03));
       border: 1px solid rgba(245,158,11,0.25);
@@ -349,14 +356,12 @@
 
     .contact-card a:hover { border-color: var(--amber); }
 
-    /* ── Divider ── */
     .section-divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border), transparent);
       margin: 80px 0;
     }
 
-    /* ── Footer ── */
     footer {
       position: relative;
       z-index: 1;
@@ -376,7 +381,6 @@
       text-decoration: none;
     }
 
-    /* ── Scroll progress bar ── */
     #progress {
       position: fixed;
       top: 0;
@@ -388,7 +392,6 @@
       transition: width 0.1s linear;
     }
 
-    /* ── Responsive ── */
     @media (max-width: 600px) {
       .section-header { flex-direction: column; gap: 8px; }
       .section-number { font-size: 32px; }
@@ -401,7 +404,6 @@
 
 <div id="progress"></div>
 
-<!-- ── Navigation ── -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">Q Ai</a>
@@ -414,13 +416,12 @@
 
 <div class="wrapper">
 
-  <!-- ── Hero ── -->
   <header class="hero">
     <div class="hero-tag">Legal Documents</div>
     <h1>Transparent by<br /><em>design.</em></h1>
     <p class="hero-meta">
       <span>Q Ai — PDF Quiz App</span>
-      <span>Last updated: March 17, 2026</span>
+      <span>Last updated: April 10, 2026</span>
     </p>
   </header>
 
@@ -438,18 +439,23 @@
 
     <div class="article">
       <h3>Who We Are</h3>
-      <p>Q Ai is an iOS application that converts PDF documents into interactive multiple-choice quizzes using AI. The app is developed and maintained by Jackson Mzimbe ("we", "us", or "our").</p>
+      <p>Q Ai is an iOS application that converts PDF documents into interactive multiple-choice quizzes using AI. The app is developed and operated by the Q Ai team ("we", "us", or "our").</p>
     </div>
 
     <div class="article">
       <h3>Data We Collect</h3>
-      <p>We collect the minimum possible data to operate the app. Specifically:</p>
+      <p>We collect the minimum possible data required to operate the app. Specifically:</p>
       <ul>
-        <li><strong>PDF content</strong> — files you upload are sent to an AI model to generate quiz questions. We do not store your PDFs on our servers after processing.</li>
-        <li><strong>Quiz data &amp; scores</strong> — stored locally on your device using SQLite. We do not sync this to any cloud service.</li>
-        <li><strong>Purchase information</strong> — handled entirely by RevenueCat and Apple. We receive only anonymised subscription status; we never see your payment details.</li>
-        <li><strong>Anonymous device identifier</strong> — a randomly generated ID stored on your device, used solely to associate likes and bookmarks with your session. It is never linked to your identity.</li>
+        <li><strong>PDF content</strong> — files you upload are processed by our AI engine to generate quiz questions. We do not store your PDFs on our servers after processing is complete.</li>
+        <li><strong>Quiz data &amp; scores</strong> — stored locally on your device. We do not sync this to any external cloud service.</li>
+        <li><strong>Purchase information</strong> — handled entirely by Apple and our subscription management provider. We receive only an anonymised subscription status indicator; we never see your payment details.</li>
+        <li><strong>Anonymous device identifier</strong> — a randomly generated ID stored on your device, used solely to track your free trial usage and associate app preferences with your session. It is never linked to your personal identity.</li>
       </ul>
+    </div>
+
+    <div class="article">
+      <h3>Free Trial Data</h3>
+      <p>Q Ai offers new users one complimentary quiz generation to experience the app before subscribing. We record whether this trial has been used via an anonymous device identifier stored locally on your device. No personal information is collected or transmitted in connection with the free trial.</p>
     </div>
 
     <div class="article">
@@ -458,33 +464,33 @@
         <li>Your name, email address, or any account credentials</li>
         <li>Location data</li>
         <li>Contacts or photos (beyond PDFs you explicitly select)</li>
-        <li>Browsing or usage analytics beyond crash reports</li>
+        <li>Browsing history or behavioural analytics beyond crash reports</li>
       </ul>
     </div>
 
     <div class="article">
       <h3>Third-Party Services</h3>
-      <p>Q Ai uses the following third-party services, each with their own privacy policies:</p>
+      <p>Q Ai integrates with the following categories of third-party service, each governed by their own privacy policies:</p>
       <ul>
-        <li><strong>OpenAI / AI provider</strong> — processes PDF text to generate quiz questions. Data is subject to their usage policies.</li>
-        <li><strong>RevenueCat</strong> — manages in-app subscriptions. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener" style="color:var(--amber)">revenuecat.com/privacy</a>.</li>
-        <li><strong>Apple App Store</strong> — handles all payment processing.</li>
+        <li><strong>AI processing</strong> — your uploaded PDF text is processed by our AI engine to generate quiz content. The content is used solely for this purpose and is subject to the data handling practices of the underlying AI infrastructure.</li>
+        <li><strong>Subscription management</strong> — our subscription provider manages in-app purchase status and renewal. We receive only anonymised entitlement data.</li>
+        <li><strong>Apple App Store</strong> — handles all payment processing in accordance with Apple's Privacy Policy.</li>
       </ul>
     </div>
 
     <div class="article">
       <h3>Data Retention &amp; Deletion</h3>
-      <p>All quiz data and scores live exclusively on your device. You can erase all data at any time from <strong>Settings → Erase All Data</strong> within the app. Uninstalling the app removes all locally stored data.</p>
+      <p>All quiz data and scores reside exclusively on your device. You can erase all locally stored data at any time from <strong>Settings → Erase All Data</strong> within the app. Uninstalling the app removes all locally stored data automatically.</p>
     </div>
 
     <div class="article">
       <h3>Children's Privacy</h3>
-      <p>Q Ai is not directed at children under 13. We do not knowingly collect any personal information from children. If you believe a child has provided personal information, please contact us immediately.</p>
+      <p>Q Ai is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided personal information through the app, please contact us immediately so we can take appropriate action.</p>
     </div>
 
     <div class="article">
       <h3>Changes to This Policy</h3>
-      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance.</p>
+      <p>We may update this Privacy Policy periodically. Material changes will be communicated by updating the "Last updated" date at the top of this page. Continued use of the app following any update constitutes your acceptance of the revised policy.</p>
     </div>
   </section>
 
@@ -504,25 +510,40 @@
 
     <div class="article">
       <h3>Acceptance of Terms</h3>
-      <p>By downloading or using Q Ai, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use the app.</p>
+      <p>By downloading or using Q Ai, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these Terms, please discontinue use of the app.</p>
     </div>
 
     <div class="article">
       <h3>License to Use</h3>
-      <p>Jackson Mzimbe grants you a limited, non-exclusive, non-transferable, revocable licence to use Q Ai for personal, non-commercial purposes, subject to these Terms.</p>
+      <p>Q Ai grants you a limited, non-exclusive, non-transferable, revocable licence to use the application for personal, non-commercial purposes, subject to these Terms.</p>
       <p>You may not:</p>
       <ul>
-        <li>Copy, modify, or distribute the app or its content</li>
+        <li>Copy, modify, or distribute the app or any of its content</li>
         <li>Reverse engineer or attempt to extract the source code</li>
         <li>Use the app for any unlawful or unauthorised purpose</li>
         <li>Upload content that infringes third-party intellectual property rights</li>
       </ul>
     </div>
 
-    <!-- ★ UPDATED — Apple-required subscription section ★ -->
+    <div class="article">
+      <h3>Free Trial</h3>
+      <p>First-time users of Q Ai are entitled to one complimentary quiz generation at no cost. This trial is limited to a single use per device and is intended to allow new users to experience the core functionality of the app before choosing a subscription plan.</p>
+
+      <div class="trial-banner">
+        <strong>One-time trial:</strong> Each new user receives one free quiz generation. Once the trial has been used, a subscription is required to continue generating quizzes. Access to previously saved quizzes remains available on the free tier at no charge.
+      </div>
+
+      <ul style="margin-top:16px">
+        <li>The free trial is limited to one quiz generation per device.</li>
+        <li>The trial is forfeited upon purchasing a subscription (the subscription supersedes it).</li>
+        <li>Saved quizzes from the trial remain accessible on the free tier indefinitely.</li>
+        <li>Q Ai reserves the right to modify or discontinue the free trial at any time.</li>
+      </ul>
+    </div>
+
     <div class="article">
       <h3>Subscriptions &amp; Payments</h3>
-      <p>Q Ai offers optional auto-renewable subscription plans that unlock premium features. The following information is provided in compliance with Apple App Store requirements.</p>
+      <p>Q Ai offers optional auto-renewable subscription plans that unlock unlimited quiz generation and premium features. The following information is provided in compliance with Apple App Store requirements.</p>
 
       <div class="sub-summary">
         <h4>Subscription Plans</h4>
@@ -562,24 +583,22 @@
           <div>
             <div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:8px;letter-spacing:0.06em">Q WEEKLY — $2.99/WK</div>
             <ul style="margin:0;gap:6px">
-              <li>4 PDF file conversions per week</li>
-              <li>Up to 5 MB per file</li>
+              <li>Unlimited PDF quiz generations</li>
+              <li>Up to 10 MB per file</li>
               <li>Interactive multiple-choice quizzes</li>
               <li>Save &amp; review quizzes anytime</li>
               <li>Squeeze mode for quick study</li>
-              <li>Share quizzes with friends</li>
               <li>Cancel anytime</li>
             </ul>
           </div>
           <div>
             <div style="font-size:12px;font-weight:600;color:var(--amber);margin-bottom:8px;letter-spacing:0.06em">Q MONTHLY — $9.99/MO</div>
             <ul style="margin:0;gap:6px">
-              <li>20 PDF file conversions per month</li>
+              <li>Unlimited PDF quiz generations</li>
               <li>Up to 10 MB per file</li>
               <li>Interactive multiple-choice quizzes</li>
               <li>Save &amp; review quizzes anytime</li>
               <li>Squeeze mode for quick study</li>
-              <li>Share quizzes with friends</li>
               <li>Cancel anytime</li>
             </ul>
           </div>
@@ -589,72 +608,69 @@
       <ul style="margin-top:16px">
         <li>Subscriptions are billed to your Apple ID account upon confirmation of purchase.</li>
         <li>Subscriptions <strong>auto-renew</strong> unless cancelled at least 24 hours before the end of the current billing period.</li>
-        <li>Your account will be charged for renewal within 24 hours prior to the end of the current period at the same price ($2.99/week or $9.99/month respectively).</li>
+        <li>Your account will be charged for renewal within 24 hours prior to the end of the current period at the applicable plan price.</li>
         <li>You can manage or cancel your subscription at any time via <strong>iPhone Settings → Apple ID → Subscriptions</strong>.</li>
-        <li>Cancellation takes effect at the end of the current billing period — you retain access until then.</li>
-        <li>Refunds are handled by Apple in accordance with their refund policy. We do not process refunds directly.</li>
-        <li>Free features remain accessible without a subscription.</li>
-        <li>If a free trial is offered, any unused portion is forfeited upon purchasing a subscription.</li>
+        <li>Cancellation takes effect at the end of the current billing period — access is retained until then.</li>
+        <li>Refunds are handled exclusively by Apple in accordance with their refund policy. Q Ai does not process refunds directly.</li>
+        <li>Free features, including access to all previously saved quizzes, remain available without a subscription.</li>
+        <li>The one-time free trial is forfeited upon purchasing any subscription plan.</li>
       </ul>
     </div>
 
     <div class="article">
       <h3>AI-Generated Content</h3>
-      <p>Quiz questions are generated by artificial intelligence based on the PDF content you provide. We make no guarantee as to the accuracy, completeness, or suitability of AI-generated content for any purpose, including academic use.</p>
-      <p>You are responsible for verifying the accuracy of quiz content before relying on it for study or assessment.</p>
+      <p>Quiz questions are generated by our AI engine based on the PDF content you upload. We make no guarantee as to the accuracy, completeness, or suitability of AI-generated content for any purpose, including academic or professional use.</p>
+      <p>You are solely responsible for verifying the accuracy of quiz content before relying on it for any study, assessment, or other purpose.</p>
     </div>
 
     <div class="article">
       <h3>User Content &amp; Uploaded Files</h3>
-      <p>You retain ownership of any PDFs you upload. By uploading a file, you represent that you have the right to do so and that the content does not violate any applicable laws or third-party rights.</p>
-      <p>We do not claim ownership of your uploaded content. Files are processed solely to generate quizzes and are not retained on our servers after processing.</p>
+      <p>You retain full ownership of any PDFs you upload. By uploading a file, you represent that you have the legal right to do so and that the content does not violate any applicable laws or third-party intellectual property rights.</p>
+      <p>Q Ai does not claim ownership of your uploaded content. Files are processed solely to generate quizzes and are not retained on our servers after processing is complete.</p>
     </div>
 
     <div class="article">
       <h3>Intellectual Property</h3>
-      <p>The Q Ai application — including its design, code, branding, and features — is owned by Jackson Mzimbe and is protected by applicable intellectual property laws. Nothing in these Terms transfers any intellectual property rights to you.</p>
+      <p>The Q Ai application — including its design, code, branding, and features — is owned and operated by Q Ai and is protected by applicable intellectual property laws. Nothing in these Terms transfers any intellectual property rights to you beyond the limited licence described above.</p>
     </div>
 
     <div class="article">
       <h3>Disclaimer of Warranties</h3>
-      <p>Q Ai is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the app will be uninterrupted, error-free, or free of harmful components.</p>
+      <p>Q Ai is provided on an "as is" and "as available" basis, without warranties of any kind, either express or implied. We do not warrant that the app will be uninterrupted, error-free, or free of harmful components. Use of the app is at your own risk.</p>
     </div>
 
     <div class="article">
       <h3>Limitation of Liability</h3>
-      <p>To the maximum extent permitted by law, Jackson Mzimbe shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of Q Ai — including loss of data, loss of profits, or any other losses.</p>
+      <p>To the maximum extent permitted by applicable law, Q Ai shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of — or inability to use — the app, including but not limited to loss of data, loss of revenue, or any other losses, even if we have been advised of the possibility of such damages.</p>
     </div>
 
     <div class="article">
       <h3>Governing Law</h3>
-      <p>These Terms are governed by and construed in accordance with the laws of the jurisdiction in which Jackson Mzimbe resides, without regard to conflict of law principles.</p>
+      <p>These Terms are governed by and construed in accordance with applicable law, without regard to conflict of law principles. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of the applicable jurisdiction.</p>
     </div>
 
     <div class="article">
       <h3>Changes to Terms</h3>
-      <p>We reserve the right to modify these Terms at any time. We will update the "Last updated" date accordingly. Continued use of the app after changes constitutes your acceptance of the revised Terms.</p>
+      <p>Q Ai reserves the right to modify these Terms at any time. We will update the "Last updated" date to reflect any changes. Continued use of the app following any modification constitutes your acceptance of the revised Terms.</p>
     </div>
 
-    <!-- Contact -->
     <div class="contact-card">
       <h3>Questions?</h3>
-      <p>If you have any questions about these documents, reach out — we're happy to clarify anything.</p>
+      <p>If you have any questions about these documents or would like clarification on any point, we're happy to help.</p>
       <a href="https://discord.gg/your-discord-link" target="_blank" rel="noopener">Join us on Discord →</a>
     </div>
   </section>
 
-</div><!-- /wrapper -->
+</div>
 
-<!-- ── Footer ── -->
 <footer>
   <p>
-    © 2026 Q Ai — Jackson Mzimbe. All rights reserved.<br />
+    © 2026 Q Ai. All rights reserved.<br />
     <a href="#privacy">Privacy Policy</a> &nbsp;·&nbsp; <a href="#terms">Terms &amp; Conditions</a>
   </p>
 </footer>
 
 <script>
-  // ── Scroll progress bar ──────────────────────────────────────────────────────
   const bar = document.getElementById('progress');
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
@@ -662,7 +678,6 @@
     bar.style.width = (scrolled / total * 100) + '%';
   }, { passive: true });
 
-  // ── Active nav link on scroll ────────────────────────────────────────────────
   const navPrivacy = document.getElementById('nav-privacy');
   const navTerms   = document.getElementById('nav-terms');
   const privacy    = document.getElementById('privacy');
@@ -683,7 +698,6 @@
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
-  // ── Hash-based direct linking ────────────────────────────────────────────────
   if (window.location.hash) {
     setTimeout(() => {
       const target = document.querySelector(window.location.hash);
